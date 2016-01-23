@@ -45,9 +45,11 @@ terra.registerCA({
 
     var surroundings = [0,1,2,3].map(function(i) {
       return neighbors.filter(function (x) {
-        return x.state === i;
+        return x.creature.state === i;
       }).length;
     });
+
+
     if (this.state === 0) {
       if (between(surroundings[1], 8,24) && between(surroundings[2], 0,16)  && between(surroundings[2], 0,12)){
         this.state = 2;
